@@ -1,0 +1,104 @@
+[
+    {
+        "key": "site_name",
+        "value": "Basecode",
+        "value_type": 1,
+        "status" : 1
+    },
+    {
+        "key": "site_domain",
+        "value": "basecode.al",
+        "value_type": 1,
+        "status" : 1
+    },
+    {
+        "key": "site_email",
+        "value": "info@basecode.al",
+        "value_type": 1,
+        "status" : 1
+    },
+    {
+        "key": "site_phone",
+        "value": "+383 49 264 234",
+        "value_type": 1,
+        "status" : 1
+    },
+    {
+        "key": "site_address",
+        "value": "Icon Tower",
+        "value_type": 3,
+        "status" : 1
+    },
+    {
+        "key": "site_logo",
+        "value": "https://basecode.al/basecode.png",
+        "value_type": 2,
+        "status" : 1
+    },
+    {
+        "key": "site_favicon",
+        "value": "https://basecode.al/bc.png",
+        "value_type": 2,
+        "status" : 1
+    },
+    {
+        "key": "mailgun_domain",
+        "value": "",
+        "value_type": 1
+    },
+    {
+        "key": "mailgun_apikey",
+        "value": "",
+        "value_type": 1
+    },
+    {
+        "key": "facebook",
+        "value": "",
+        "value_type": 1,
+        "status" : 1
+    },
+    {
+        "key": "instagram",
+        "value": "",
+        "value_type": 1,
+        "status" : 1
+    },
+    {
+        "key": "twitter",
+        "value": "",
+        "value_type": 1,
+        "status" : 1
+    },
+    {
+        "key": "appstore",
+        "value": "",
+        "value_type": 1,
+        "status" : 1
+    },
+    {
+        "key": "googleplay",
+        "value": "",
+        "value_type": 1,
+        "status" : 1
+    },
+    {
+        "key": "windowsphoneapp",
+        "value": "",
+        "value_type": 1,
+        "status" : 1
+    },
+    {
+        "key": "defaultcurrency",
+        "value": "3",
+        "options": "Currency",
+        "value_type": 4,
+        "status" : 1
+    },
+    {
+        "key": "defaultlanguage",
+        "value": "163",
+        "options": "Language",
+        "value_type": 4,
+        "status" : 1
+    }
+]

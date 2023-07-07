@@ -1,0 +1,22 @@
+{
+  "name": "construct",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "construct": "bin/createModule.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basecodeDev/Construct.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/basecodeDev/Construct/issues"
+  },
+  "homepage": "https://github.com/basecodeDev/Construct#readme"
+}
