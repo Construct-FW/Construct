@@ -42,7 +42,7 @@ function init(openAdmin, fastify, prefix, swaggerConf, serviceConfig) {
 
     if (swaggerConf) {
         if(!config.isDevelopment) {
-            swaggerConf.swagger.host = 'api.' + config.domain + '/v1/api';
+            swaggerConf.swagger.host = (serviceConfig.subdomain || 'api') + '.' + config.domain + '/v1/api';
         }
         fastify.register(require('@fastify/swagger'), swaggerConf);
     }
