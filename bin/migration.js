@@ -1,12 +1,13 @@
 const { Table, TableForeignKey } = require("typeorm")
 const fs = require("fs")
+const config = require('../../../app/config');
 
 module.exports = class MigrationContstruct {
 
         constructor(modelName = '', tableName = '') {
             
             if(modelName !== tableName) {
-                if(fs.existsSync(__dirname + '/../core/'+modelName+'/modules/' + tableName)) {
+                if(fs.existsSync(__dirname + '/../core/'+modelName+'/modules/' + tableName) && !config.disablecore) {
                     this.callModel = require(__dirname + '/../core/'+modelName+'/modules/' + tableName)
                 } else if(fs.existsSync(process.cwd() + '/app/modules/'+modelName+'/modules/' + tableName)) {
                     this.callModel = require(process.cwd() + '/app/modules/'+modelName+'/modules/' + tableName)
@@ -14,7 +15,7 @@ module.exports = class MigrationContstruct {
                     this.callModel = false
                 }
             } else {
-                if(fs.existsSync(__dirname + '/../core/'+modelName+'/model.js')) {
+                if(fs.existsSync(__dirname + '/../core/'+modelName+'/model.js') && !config.disablecore) {
                     this.callModel = require(__dirname + '/../core/'+modelName+'/model.js')
                 } else if(fs.existsSync(process.cwd() + '/app/modules/'+modelName+'/model.js')) {
                     this.callModel = require(process.cwd() + '/app/modules/'+modelName+'/model.js')
