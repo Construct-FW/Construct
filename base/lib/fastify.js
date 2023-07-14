@@ -158,7 +158,7 @@ function init(openAdmin, fastify, prefix, swaggerConf, serviceConfig) {
                 messages = error.validation.reduce((o,n) => {
                     let message = { type: n.keyword, key: null, params: {} }
                     if(n.dataPath && n.dataPath.length > 0) {
-                        message.key = n.dataPath.replace(new RegExp('/', 'g'), '---').replace(/\./g, '-').replace(/\[/g, '-').replace(/\]/g, '-')
+                        message.key = n.dataPath.replace('/', '').replace(new RegExp('/', 'g'), '---').replace(/\./g, '-').replace(/\[/g, '-').replace(/\]/g, '-')
                     }
 
                     if(n.params) {
@@ -168,10 +168,10 @@ function init(openAdmin, fastify, prefix, swaggerConf, serviceConfig) {
                                 const paramValue = n.params[paramKey];
                                 
                                 if(paramKey == 'additionalProperty') {
-                                    message.key = paramValue.replace(new RegExp('/', 'g'), '---').replace(/\./g, '-').replace(/\[/g, '-').replace(/\]/g, '-')
+                                    message.key = paramValue.replace('/', '').replace(new RegExp('/', 'g'), '---').replace(/\./g, '-').replace(/\[/g, '-').replace(/\]/g, '-')
                                     n.params[paramKey] = i18n.__(message.key)
                                 } else if(paramKey == 'missingProperty') {
-                                    message.key = paramValue.replace(new RegExp('/', 'g'), '---').replace(/\./g, '-').replace(/\[/g, '-').replace(/\]/g, '-')
+                                    message.key = paramValue.replace('/', '').replace(new RegExp('/', 'g'), '---').replace(/\./g, '-').replace(/\[/g, '-').replace(/\]/g, '-')
                                     n.params[paramKey] = i18n.__(message.key)
                                 }
                             }
