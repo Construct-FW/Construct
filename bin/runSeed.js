@@ -4,6 +4,7 @@ const baseDirCore = path.join(__dirname, "../core")
 const baseDirModules = path.join(process.cwd(), "/app/modules")
 const { connectDb, entityFiles, orderMigrationFiles } = require('../base/lib/typeorm');
 const log = require('log-beautify')
+const config = require('../../../app/config');
 
 const start = async () => {
     
@@ -31,7 +32,7 @@ const seedRunner = async (dataBase) => {
     const coreSeed = await fs.readdirSync(baseDirCore)
     const moduleSeed = await fs.readdirSync(baseDirModules)
 
-    if(coreSeed.length > 0) {
+    if(coreSeed.length > 0 && !config.disablecore) {
         for (let ce = 0; ce < coreSeed.length; ce++) {
             const seed = coreSeed[ce];
             const exists = await fs.existsSync(baseDirCore + "/" + seed);
