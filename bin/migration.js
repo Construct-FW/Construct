@@ -81,7 +81,7 @@ module.exports = class MigrationContstruct {
                                         await queryRunner.createForeignKey(this.callModel.options.tableName, new TableForeignKey({
                                             columnNames: [joinColumn.name],
                                             referencedColumnNames: [joinColumn.referencedColumnName],
-                                            referencedTableName: foreignKey.name,
+                                            referencedTableName: foreignKey.referenceTable || foreignKey.name,
                                             onDelete: foreignKey.onDelete || 'NO ACTION',
                                             onUpdate: foreignKey.onUpdate || 'NO ACTION'
                                         }), true)
@@ -94,7 +94,7 @@ module.exports = class MigrationContstruct {
                                     await queryRunner.createForeignKey(this.callModel.options.tableName, new TableForeignKey({
                                         columnNames: [foreignKey.joinColumn.name],
                                         referencedColumnNames: [foreignKey.joinColumn.referencedColumnName],
-                                        referencedTableName: foreignKey.name,
+                                        referencedTableName: foreignKey.referenceTable || foreignKey.name,
                                         onDelete: foreignKey.onDelete || 'NO ACTION',
                                         onUpdate: foreignKey.onUpdate || 'NO ACTION'
                                     }), true)
