@@ -4,6 +4,7 @@ const oauthPlugin = require('@fastify/oauth2');
 const config = require('../../../../app/config');
 const path = require('path');
 const i18n = require('./i18n');
+const addFormats = require("ajv-formats")
 
 const opts = {
     attachFieldsToBody: true,
@@ -20,11 +21,13 @@ const opts = {
 
 function init(openAdmin, fastify, prefix, swaggerConf, serviceConfig) {
     let routes = [];
-    const ajv = new Ajv({
+    let ajv = new Ajv({
         removeAdditional: false,
         coerceTypes: false,
         allErrors: true
     })
+
+    ajv = addFormats(ajv, {mode: "fast"})
 
     fastify.schemaCompiler = schema =>  ajv.compile(schema)
 
