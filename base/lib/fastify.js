@@ -216,10 +216,8 @@ function init(openAdmin, fastify, prefix, swaggerConf, serviceConfig) {
                 messages.push(error.sqlMessage)
             }
 
-            if(error.code && error.code != 'ER_DUP_ENTRY') {
-                messages.push('item_already_exists')
-            } else if(error.code && error.code == 'ER_ROW_IS_REFERENCED_2') {
-                messages.push('item_using_in_other_table')
+            if(error.code) {
+                messages.push(i18n.__(error.code))
             } else {
                 messages.push('something_went_wrong')
                 console.log(error.code);
